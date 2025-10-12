@@ -7,6 +7,13 @@ type Book = {
   slug: string;
 };
 
+type ApiData = {
+  fields: string[];
+  data: string;
+  filter: [string, string];
+  sort: string;
+};
+
 type Block = {
   content: string;
   image?: { path: string };
@@ -22,4 +29,4 @@ type Chapter = {
   blocks: Block[];
 };
 
-export type { Book, Block, Chapter };
+export type { Book, Block, Chapter, ApiData };

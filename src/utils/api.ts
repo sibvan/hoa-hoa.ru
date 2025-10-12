@@ -1,8 +1,9 @@
 import axios from "axios";
+import type { ApiData } from "../types";
 
 export const assetsUrl = "https://s1112388.smrtp.ru/hoa-hoa/storage/uploads/";
 
-export const getData = async ({ data, sort, fields, filter }) => {
+export const getData = async ({ data, sort, fields, filter }: ApiData) => {
   const sortObj = {};
   const fieldsObj = {};
   const filterObj = {};

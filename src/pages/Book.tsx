@@ -8,7 +8,7 @@ function Book() {
   const params = useParams();
 
   const [chapter, setChapter] = useState({
-    number: null,
+    number: 1,
     title: "",
     blocks: [],
   });
@@ -17,13 +17,17 @@ function Book() {
   const [book, setBook] = useState([]);
 
   const bookTitle = params.book
-    .split("-")
-    .map((word, id) =>
-      id === 0 ? word : word[0].toUpperCase() + word.slice(1)
-    )
-    .join("");
+    ? params.book
+        .split("-")
+        .map((word, id) =>
+          id === 0 ? word : word[0].toUpperCase() + word.slice(1)
+        )
+        .join("")
+    : "";
 
-  const bookChapter = Number(params.chapter.replace("chapter-", ""));
+  const bookChapter = params.chapter
+    ? Number(params.chapter.replace("chapter-", ""))
+    : 1;
 
   const chapterNumber =
     chapter.number < 10 ? "0" + chapter.number : chapter.number;
@@ -51,9 +55,6 @@ function Book() {
   useEffect(() => {
     if (book.length === 0) return;
     document.title = `${book.title} ${book.subtitle}. Глава ${bookChapter}. «${chapter.title}»`;
-    console.log(
-      `${book.title} ${book.subtitle}. Глава ${bookChapter}. «${chapter.title}»`
-    );
   }, [book]);
 
   useEffect(() => {
