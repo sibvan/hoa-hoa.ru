@@ -1,0 +1,111 @@
+@use "../../../styles/mixins" as m;
+
+.book {
+  padding: 24px;
+  box-sizing: border-box;
+  background: var(--color-lilac);
+  border-radius: 20px;
+  grid-column: span 6;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out;
+  display: flex;
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 48px;
+    flex: 1;
+  }
+
+  &:hover .book__img-container .book__img {
+    transform: scale(2);
+    transition: transform 5s ease-in-out;
+  }
+
+  &:hover .book__title {
+    color: var(--color-lilac);
+  }
+
+  &:hover .book__subtitle {
+    color: var(--color-white);
+  }
+
+  &:hover {
+    background: var(--color-black);
+  }
+
+  &_placeholder {
+    grid-column: span 2;
+    background: none;
+    border: 1px solid var(--color-black);
+    pointer-events: none;
+
+    &:last-child {
+      animation: book-rotate-14 1s 1 normal
+        cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+    &:nth-last-child(2) {
+      animation: book-rotate-7 1s 1 normal
+        cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.2s;
+    }
+  }
+
+  &__img-container {
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    background-color: #172b4f;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &__title {
+    transition: color 0.5s ease-in-out;
+    @include m.font(
+      $color: var(--color-white),
+      $family: var(--font-title),
+      $size: var(--size-title)
+    );
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  &__subtitle {
+    transition: color 0.5s ease-in-out;
+    @include m.font(
+      $color: var(--color-black),
+      $family: var(--font-title),
+      $size: var(--size-subtitle)
+    );
+  }
+}
+
+@keyframes book-rotate-14 {
+  to {
+    transform: rotate(-14deg);
+  }
+}
+
+@keyframes book-rotate-7 {
+  to {
+    transform: rotate(-7deg);
+  }
+}
+
+@media (orientation: portrait) {
+  .book {
+    grid-column: span 12;
+
+    &_placeholder {
+      grid-column: span 4;
+      order: 1;
+    }
+  }
+}

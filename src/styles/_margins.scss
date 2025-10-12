@@ -1,0 +1,17 @@
+@use "./mixins" as m;
+
+.chapter__paragraph + .chapter__dialog {
+  @include m.margins($bottom: 0);
+}
+
+.chapter__dialog + .chapter__paragraph {
+  @include m.margins($top: 2, $bottom: 0);
+}
+
+.chapter__dialog + .chapter__dialog {
+  margin-top: 8px;
+}
+
+.chapter__paragraph + .chapter__paragraph {
+  @include m.margins($bottom: 0);
+}

@@ -1,0 +1,20 @@
+@use "../../../styles//mixins" as m;
+
+.puzzle {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__img {
+    border-radius: 20px;
+    width: 100%;
+  }
+
+  &__alt {
+    @include m.font(
+      $color: var(--color-black),
+      $family: var(--font-text),
+      $size: 16px
+    );
+  }
+}

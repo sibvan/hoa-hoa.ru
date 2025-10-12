@@ -1,0 +1,16 @@
+body {
+  background: var(--color-white);
+  padding: 12px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  
+}
+
+#root {
+  width: 100%;
+  max-width: 1710px;
+  margin: 0 auto;
+  min-height: calc(100dvh - 24px);
+  display: flex;
+  flex-direction: column;
+}

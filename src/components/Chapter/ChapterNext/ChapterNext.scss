@@ -1,0 +1,20 @@
+@use "../../../styles//mixins" as m;
+
+.chapter {
+  &__next {
+    @include m.margins($top: 3, $bottom: 0);
+
+    padding: 24px;
+    background-color: var(--color-lilac);
+    border-radius: 20px;
+  }
+  &__next-text {
+    @include m.font(
+      $color: var(--color-black),
+      $family: var(--font-text),
+      $size: var(--font-size),
+      $height: 145%,
+      $align: center
+    );
+  }
+}

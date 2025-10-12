@@ -1,0 +1,81 @@
+@use "../../styles//mixins" as m;
+
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  &_error {
+    background-color: var(--color-black);
+  }
+
+  &__clock {
+    position: relative;
+    width: 118.5px;
+    height: 118.5px;
+  }
+
+  &__clock-arrows {
+    position: absolute;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  &__clock-face {
+    width: 118.5px;
+    height: 118.5px;
+    object-fit: contain;
+    animation: loader-rotate 10s infinite normal linear;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    @include m.font(
+      $color: var(--color-black),
+      $family: var(--font-text),
+      $size: 24px,
+      $align: center
+    );
+
+    &_error {
+      color: var(--color-white);
+    }
+  }
+
+  &__text {
+    @include m.font(
+      $color: var(--color-black),
+      $family: var(--font-text),
+      $size: 16px,
+      $align: center
+    );
+
+    &_error {
+      color: var(--color-white);
+    }
+  }
+}
+
+@keyframes loader-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

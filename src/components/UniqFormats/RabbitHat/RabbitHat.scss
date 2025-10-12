@@ -1,0 +1,55 @@
+.rabbit-hat {
+  width: 20%;
+  margin: 0 auto;
+  position: relative;
+
+  &__hat {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    &_placeholder {
+      opacity: 0;
+    }
+  }
+
+  &__rabbit {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    width: auto;
+    left: 16%;
+    transform: scale(0.2);
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      opacity 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &_show {
+      transform: translateY(-100%) scale(1.3);
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .rabbit-hat {
+    width: 35%;
+  }
+}
+
+@media (max-width: 852px) {
+  .rabbit-hat {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .rabbit-hat {
+    width: 65%;
+  }
+}
+
+@media (max-width: 393px) {
+  .rabbit-hat {
+    width: 80%;
+  }
+}

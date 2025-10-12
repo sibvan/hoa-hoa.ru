@@ -1,0 +1,55 @@
+:root {
+  --color-white: #fff;
+  --color-lilac: #ddc9fe;
+  --color-black: #000;
+
+  --font-text: "Noto Serif", serif;
+  --font-title: "Underdog", system-ui;
+
+  --size-title: min(
+    calc(179.14px * 100dvw / 1710px),
+    calc(179.14px * 1710px / 1710px)
+  );
+  --size-subtitle: min(
+    calc(57.8px * 100dvw / 1710px),
+    calc(57.8px * 1710px / 1710px)
+  );
+
+  --gap: 35px;
+  --font-size: 24px;
+}
+
+@media (orientation: portrait) {
+  :root {
+    --size-title: calc(179.2px * 100dvw / 1024px);
+    --size-subtitle: calc(58.39px * 100dvw / 1024px);
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --gap: 33px;
+    --font-size: 23px;
+  }
+}
+
+@media (max-width: 852px) {
+  :root {
+    --gap: 32px;
+    --font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gap: 30px;
+    --font-size: 21px;
+  }
+}
+
+@media (max-width: 393px) {
+  :root {
+    --gap: 29px;
+    --font-size: 20px;
+  }
+}

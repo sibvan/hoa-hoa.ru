@@ -1,0 +1,30 @@
+.rabbit-clock {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+
+  &__clock {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__circle {
+    position: absolute;
+    width: 23%;
+    left: 39.8%;
+    top: 40%;
+    animation: clock-rotate 20s infinite normal linear;
+  }
+}
+
+@keyframes clock-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

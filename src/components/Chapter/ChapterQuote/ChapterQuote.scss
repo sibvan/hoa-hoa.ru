@@ -1,0 +1,32 @@
+@use "../../../styles//mixins" as m;
+
+.quote {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(9, 1fr);
+  border-left: 1px solid var(--color-black);
+
+  &__quote-sign {
+    @include m.font(
+      $color: var(--color-white),
+      $family: var(--font-title),
+      $size: var(--size-title)
+    );
+    text-shadow: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black),
+      -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black);
+    grid-column-start: 9;
+    grid-column-end: 10;
+    justify-self: end;
+  }
+
+  &__text {
+    grid-column-start: 2;
+    grid-column-end: 9;
+
+    @include m.font(
+      $color: var(--color-black),
+      $family: var(--font-title),
+      $size: var(--size-subtitle)
+    );
+  }
+}

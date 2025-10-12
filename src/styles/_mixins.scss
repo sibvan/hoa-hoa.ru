@@ -1,0 +1,14 @@
+@mixin font($color, $family, $size, $weight: 400, $height: 100%, $align: left) {
+  color: $color;
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  font-style: normal;
+  text-align: $align;
+}
+
+@mixin margins($top: 1, $bottom: 1) {
+  margin-top: calc(var(--gap) * $top);
+  margin-bottom: calc(var(--gap) * $bottom);
+}

@@ -1,0 +1,12 @@
+@use "../../../styles/mixins" as m;
+
+.chapter {
+  &__paragraph {
+    @include m.font(
+      $color: var(--color-black),
+      $family: var(--font-text),
+      $size: var(--font-size),
+      $height: 145%
+    );
+  }
+}

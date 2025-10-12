@@ -1,0 +1,25 @@
+@use "../../../styles//mixins" as m;
+
+.chapter {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(12, 1fr);
+
+  &__inner {
+    grid-column-start: 2;
+    grid-column-end: 11;
+  }
+
+  &__format {
+    @include m.margins($top: 2, $bottom: 3);
+  }
+}
+
+@media (max-width: 1024px) {
+  .chapter {
+    &__inner {
+      grid-column-start: 1;
+      grid-column-end: 13;
+    }
+  }
+}

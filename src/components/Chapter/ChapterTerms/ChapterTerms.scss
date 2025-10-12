@@ -1,0 +1,91 @@
+@use "../../../styles//mixins" as m;
+
+.terms {
+  display: flex;
+
+  &__item {
+    cursor: pointer;
+    padding: 0 var(--gap);
+    padding-top: calc(var(--gap) * 2);
+    padding-bottom: calc(var(--gap) * 3);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    border-radius: 20px;
+    flex: 1;
+
+    &:first-child {
+      border: 1px solid var(--color-black);
+      border-right-width: 0.5px;
+    }
+    &:last-child {
+      border: 1px solid var(--color-black);
+      border-left-width: 0.5px;
+    }
+
+    &:hover .terms__mask {
+      background: transparent;
+      animation: none;
+    }
+  }
+
+  &__title {
+    @include m.font(
+      $color: var(--color-black),
+      $family: var(--font-title),
+      $size: var(--size-subtitle),
+      $align: center
+    );
+  }
+
+  &__description {
+    @include m.font(
+      $color: var(--color-black),
+      $family: var(--font-text),
+      $size: 16px,
+      $align: center,
+      $height: 145%
+    );
+  }
+
+  &__definition {
+    position: relative;
+  }
+
+  &__mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    animation: mask-opacity 1s ease-in-out 0s infinite alternate-reverse;
+    background-color: var(--color-white);
+    transition: background 0.5s ease-in-out;
+  }
+}
+
+@keyframes mask-opacity {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (orientation: portrait) {
+  .terms {
+    flex-direction: column;
+    &__item {
+      &:first-child {
+        border: 1px solid var(--color-black);
+        border-bottom-width: 0.5px;
+      }
+      &:last-child {
+        border: 1px solid var(--color-black);
+        border-top-width: 0.5px;
+      }
+    }
+  }
+}

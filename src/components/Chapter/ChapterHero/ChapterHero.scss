@@ -1,0 +1,24 @@
+@use "../../../styles//mixins" as m;
+
+.chapter {
+  &__hero {
+    @include m.margins($top: 5, $bottom: 4);
+  }
+  &__number {
+    @include m.font(
+      $color: var(--color-white),
+      $family: var(--font-title),
+      $size: var(--size-title)
+    );
+    text-shadow: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black),
+      -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black);
+  }
+
+  &__title {
+    @include m.font(
+      $color: var(--color-black),
+      $family: var(--font-title),
+      $size: var(--size-subtitle)
+    );
+  }
+}

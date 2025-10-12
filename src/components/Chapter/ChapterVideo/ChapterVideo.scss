@@ -1,0 +1,9 @@
+@use "../../../styles//mixins" as m;
+
+.video {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  @include m.margins($top: 2, $bottom: 3);
+}
