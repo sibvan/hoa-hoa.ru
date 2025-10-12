@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import BookList from "../components/Home/BookList/BookList";
 import { getData, assetsUrl } from "../utils/api";
 import Loader from "../components/Loader/Loader";
@@ -13,7 +13,15 @@ function Home() {
     const books = await getData({
       data: "books",
       sort: "order",
-      fields: ["_id", "title", "subtitle", "placeholder", "cover", "slug", "order"],
+      fields: [
+        "_id",
+        "title",
+        "subtitle",
+        "placeholder",
+        "cover",
+        "slug",
+        "order",
+      ],
     });
 
     const booksWithCovers = books.map((book: Book) => ({
