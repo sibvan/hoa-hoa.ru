@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getData } from "../utils/api";
+import { getData, assetsUrl } from "../utils/api";
 import ChapterContent from "../components/Chapter/ChapterContent/ChapterContent";
 import Loader from "../components/Loader/Loader";
-import { assetsUrl } from "../utils/api";
 
 function Book() {
   const params = useParams();
