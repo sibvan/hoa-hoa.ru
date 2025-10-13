@@ -70,13 +70,13 @@ function ChapterContent({
               return <ChapterQuote key={id} content={block.content} />;
 
             case "Термины":
-              return <ChapterTerms key={id} content={block.terms} />;
+              return <ChapterTerms key={id} content={block.terms ?? []} />;
 
             case "Единицы измерения":
               return (
                 <ChapterMeasures
                   key={id}
-                  measures={block.measures}
+                  measures={block.measures.flatMap(m => m.measures)}
                   content={block.content}
                 />
               );

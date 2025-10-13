@@ -1,9 +1,10 @@
+import type { Term, Terms } from "../../../types";
 import "./ChapterTerms.scss";
 
-function ChapterTerms({ content }) {
+function ChapterTerms({ content }: Terms) {
   return (
     <div className="chapter__format terms">
-      {content.map((term) => (
+      {content.map((term: Term) => (
         <div className="terms__item" key={term.word}>
           <p className="terms__title">{term.word}</p>
           <div className="terms__definition">

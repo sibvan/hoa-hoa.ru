@@ -1,6 +1,7 @@
+import type { HeroContent } from "../../../types";
 import "./ChapterHero.scss";
 
-function ChapterHero({title, number}) {
+function ChapterHero({ title, number }: HeroContent) {
   return (
     <div className="chapter__hero">
       <p className="chapter__number">{number}</p>

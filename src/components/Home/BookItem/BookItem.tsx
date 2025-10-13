@@ -1,11 +1,11 @@
 import "./BookItem.scss";
-import type { Book } from "../../../types";
+import type { BookType } from "../../../types";
 import { Link } from "react-router";
 
 function BookItem({
   book: { title, placeholder, subtitle, cover, slug },
 }: {
-  book: Book;
+  book: BookType;
 }) {
   const LinkToBook = slug + "/chapter-1";
 
@@ -23,7 +23,11 @@ function BookItem({
           <p className="book__subtitle">{subtitle}</p>
         </div>
         <div className="book__img-container">
-          <img className="book__img" src={cover} alt="" />
+          <img
+            className="book__img"
+            src={typeof cover === "string" ? cover : cover.path}
+            alt=""
+          />
         </div>
       </Link>
     </li>

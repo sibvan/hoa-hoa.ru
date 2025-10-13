@@ -3,15 +3,16 @@ import "./Keyhole.scss";
 import clsx from "clsx";
 import mask from "../../../assets/uniq-formats/keyhole/mask.png";
 
-function Keyhole({ image }) {
+function Keyhole({ image }: { image: string }) {
   const [hideMask, setHideMask] = useState(false);
-  const imgRef = useRef(null);
+  const imgRef = useRef<HTMLImageElement | null>(null);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: MouseEvent) => {
     const root = document.documentElement;
     const gap = parseInt(getComputedStyle(root).getPropertyValue("--gap"));
 
     const img = imgRef.current;
+    if (!img) return;
     const rect = img.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width - 0.5) * gap * 2;
     const y = ((e.clientY - rect.top) / rect.height - 0.5) * gap * 2;

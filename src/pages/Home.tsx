@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import BookList from "../components/Home/BookList/BookList";
 import { getData, assetsUrl } from "../utils/api";
 import Loader from "../components/Loader/Loader";
-import type { Book } from "../types";
+import type { BookType } from "../types";
 
 function Home() {
   const [books, setBooks] = useState([]);
@@ -24,9 +24,12 @@ function Home() {
       ],
     });
 
-    const booksWithCovers = books.map((book: Book) => ({
+    const booksWithCovers = books.map((book: BookType) => ({
       ...book,
-      cover: assetsUrl + book.cover.path,
+      cover:
+        typeof book.cover === "string"
+          ? assetsUrl + book.cover
+          : assetsUrl + book.cover.path,
     }));
 
     setBooks(booksWithCovers);

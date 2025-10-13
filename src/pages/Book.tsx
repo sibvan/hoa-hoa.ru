@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { getData, assetsUrl } from "../utils/api";
 import ChapterContent from "../components/Chapter/ChapterContent/ChapterContent";
 import Loader from "../components/Loader/Loader";
+import type { BookType } from "../types";
 
 function Book() {
   const params = useParams();
@@ -14,7 +15,7 @@ function Book() {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const [book, setBook] = useState([]);
+const [book, setBook] = useState<BookType | null>(null);
 
   const bookTitle = params.book
     ? params.book
@@ -45,7 +46,7 @@ function Book() {
   const getTitle = async () => {
     const book = await getData({
       data: "books",
-      filter: ["slug", params.book],
+      filter: params.book ? ["slug", params.book] : undefined,
       fields: ["title", "subtitle"],
     });
 
@@ -53,7 +54,7 @@ function Book() {
   };
 
   useEffect(() => {
-    if (book.length === 0) return;
+    if (!book) return;
     document.title = `${book.title} ${book.subtitle}. Глава ${bookChapter}. «${chapter.title}»`;
   }, [book]);
 

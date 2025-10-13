@@ -3,7 +3,7 @@ import eatMe from "../../../assets/uniq-formats/tall-change/eat-me.png";
 import drinkMe from "../../../assets/uniq-formats/tall-change/drink-me.png";
 import { useRef, useState } from "react";
 
-function TallChange({ image }) {
+function TallChange({ image }: {image: string}) {
   const imgRef = useRef(null);
   const [width, setWidth] = useState(20);
 

@@ -1,6 +1,7 @@
+import type { ChapterContent } from "../../../types";
 import "./ChapterVideo.scss";
 
-function ChapterVideo({ content }) {
+function ChapterVideo({ content }: ChapterContent) {
   return (
     <div className="chapter__format video">
       <iframe

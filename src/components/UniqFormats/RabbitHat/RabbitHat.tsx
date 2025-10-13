@@ -4,8 +4,8 @@ import rabbit from "../../../assets/uniq-formats/rabbit-hat/rabbit.png";
 import { useEffect, useRef } from "react";
 
 function RabbitHat() {
-  const imgRef = useRef(null);
-  const blockRef = useRef(null);
+  const imgRef = useRef<HTMLImageElement | null>(null);
+  const blockRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
     const img = imgRef.current;
