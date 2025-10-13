@@ -3,6 +3,7 @@ import "./ChapterMeasures.scss";
 
 function ChapterMeasures({ content, measures }: MeasuresContent) {
 
+
   
   return (
     <div className="chapter__format measures">

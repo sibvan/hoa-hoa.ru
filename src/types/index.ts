@@ -46,7 +46,7 @@ type Block = {
   content: string;
   image?: { path: string };
   terms?: Term[];
-  measures: MeasuresContent[];
+  measures: { measure: string }[]; 
   type: string;
 };
 

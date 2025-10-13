@@ -76,7 +76,7 @@ function ChapterContent({
               return (
                 <ChapterMeasures
                   key={id}
-                  measures={block.measures.flatMap(m => m.measures)}
+                  measures={block.measures}
                   content={block.content}
                 />
               );
