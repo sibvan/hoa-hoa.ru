@@ -1,6 +1,6 @@
 import "./TallChange.scss";
-import eatMe from "../../../assets/uniq-formats/tall-change/eat-me.png";
-import drinkMe from "../../../assets/uniq-formats/tall-change/drink-me.png";
+import eatMe from "../../../assets/uniq-formats/tall-change/eat-me.webp";
+import drinkMe from "../../../assets/uniq-formats/tall-change/drink-me.webp";
 import { useRef, useState } from "react";
 
 function TallChange({ image }: {image: string}) {
