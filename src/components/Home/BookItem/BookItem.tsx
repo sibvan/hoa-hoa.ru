@@ -9,6 +9,7 @@ function BookItem({
 }) {
   const LinkToBook = slug + "/chapter-1";
 
+  
   return placeholder ? (
     <li className="book book_placeholder"></li>
   ) : (
