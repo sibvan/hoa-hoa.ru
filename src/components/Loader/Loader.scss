@@ -23,19 +23,33 @@
     height: 118.5px;
   }
 
-  &__clock-arrows {
+  &__clock-hand {
     position: absolute;
-    width: 70%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+
+    &_big {
+      left: 45%;
+      top: 27%;
+      width: 25%;
+      animation: loader-rotate 5s infinite reverse linear;
+      transform-origin: 26% 77%;
+    }
+
+    &_small {
+      animation: hand-rotate 10s infinite normal linear;
+      transform-origin: 1% 1%;
+      left: 51%;
+      top: 50%;
+      width: 20%;
+    }
   }
   &__clock-face {
     width: 118.5px;
     height: 118.5px;
     object-fit: contain;
-    animation: loader-rotate 10s infinite normal linear;
+
+    &_rotate {
+      animation: loader-rotate 5s infinite normal linear;
+    }
   }
 
   &__text {
