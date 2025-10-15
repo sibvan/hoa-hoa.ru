@@ -1,7 +1,8 @@
 .alice-falling {
   width: 100%;
   aspect-ratio: 3 / 2;
-  background-color: var(--color-black);
+
+  background: url("/pit.webp") no-repeat center / cover;
   border-radius: 20px;
   display: flex;
   padding: 10px 0px;
