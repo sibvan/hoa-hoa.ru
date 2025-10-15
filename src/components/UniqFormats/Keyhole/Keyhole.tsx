@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./Keyhole.scss";
 import clsx from "clsx";
-import mask from "../../../assets/uniq-formats/keyhole/mask.png";
+import mask from "../../../assets/uniq-formats/keyhole/mask.webp";
 
 function Keyhole({ image }: { image: string }) {
   const [hideMask, setHideMask] = useState(false);
@@ -46,8 +46,15 @@ function Keyhole({ image }: { image: string }) {
 
   const maskClasses = clsx(
     "keyhole__img",
+    "keyhole__img_show",
     "keyhole__mask",
     hideMask && "keyhole__mask_hide"
+  );
+
+  const imgClasses = clsx(
+    "keyhole__img",
+    "keyhole__img_garden",
+    hideMask && "keyhole__img_show"
   );
 
   const showGarden = () => {
@@ -58,12 +65,7 @@ function Keyhole({ image }: { image: string }) {
     <div className="chapter__format keyhole">
       <div onClick={showGarden} className="keyhole__img-container">
         <img className={maskClasses} src={mask} alt="" />
-        <img
-          ref={imgRef}
-          className="keyhole__img keyhole__img_garden"
-          src={image}
-          alt=""
-        />
+        <img ref={imgRef} className={imgClasses} src={image} alt="" />
       </div>
       <p className="keyhole__alt">Нажми, чтобы заглянуть в замочную скважину</p>
     </div>

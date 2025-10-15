@@ -19,6 +19,15 @@
     object-fit: cover;
     width: 100%;
     position: absolute;
+    filter: blur(10px);
+
+    &:hover {
+      filter: blur(0px);
+    }
+
+    &_show {
+      filter: blur(0px);
+    }
 
     &_garden {
       max-width: calc(100% + var(--gap) * 2);
@@ -29,20 +38,20 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      transition: filter 1s ease-in-out;
     }
   }
 
   &__mask {
     top: 0;
     width: 100%;
-
     left: 0;
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     pointer-events: none;
     z-index: 1;
 
     &_hide {
-      transform: scale(10);
+      transform: scale(8) translateX(0.4%);
       opacity: 0.5;
     }
   }
