@@ -5,22 +5,34 @@
   overflow: hidden;
   position: relative;
 
-  &__clock {
+  &__face {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
 
-  &__circle {
+  &__hand {
     position: absolute;
-    width: 23%;
-    left: 39.8%;
-    top: 40%;
-    animation: clock-rotate 20s infinite normal linear;
+
+    &_big {
+      left: 48%;
+      top: 35%;
+      width: 8%;
+      animation: hand-rotate 10s infinite reverse linear;
+      transform-origin: 26% 77%;
+    }
+
+    &_small {
+      left: 50%;
+      top: 46%;
+      width: 6%;
+      animation: hand-rotate 10s infinite normal linear;
+      transform-origin: 1% 1%;
+    }
   }
 }
 
-@keyframes clock-rotate {
+@keyframes hand-rotate {
   from {
     transform: rotate(0deg);
   }
