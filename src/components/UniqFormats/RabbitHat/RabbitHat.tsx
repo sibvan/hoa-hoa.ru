@@ -1,6 +1,6 @@
 import "./RabbitHat.scss";
-import hat from "../../../assets/uniq-formats/rabbit-hat/hat.png";
-import rabbit from "../../../assets/uniq-formats/rabbit-hat/rabbit.png";
+import hat from "../../../assets/uniq-formats/rabbit-hat/hat.webp";
+import rabbit from "../../../assets/uniq-formats/rabbit-hat/rabbit.webp";
 import { useEffect, useRef } from "react";
 
 function RabbitHat() {
