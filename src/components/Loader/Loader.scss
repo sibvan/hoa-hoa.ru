@@ -27,21 +27,22 @@
     position: absolute;
 
     &_big {
-      left: 45%;
-      top: 27%;
-      width: 25%;
+      left: 30%;
+      top: 32%;
+      width: 21%;
       animation: loader-rotate 5s infinite reverse linear;
-      transform-origin: 26% 77%;
+      transform-origin: 100% 100%;
     }
 
     &_small {
       animation: hand-rotate 10s infinite normal linear;
-      transform-origin: 1% 1%;
-      left: 51%;
-      top: 50%;
-      width: 20%;
+      transform-origin: 0% 100%;
+      left: 51.5%;
+      top: 31.5%;
+      width: 27%;
     }
   }
+
   &__clock-face {
     width: 118.5px;
     height: 118.5px;
@@ -59,12 +60,10 @@
   }
 
   &__title {
-    @include m.font(
-      $color: var(--color-black),
+    @include m.font($color: var(--color-black),
       $family: var(--font-text),
       $size: 24px,
-      $align: center
-    );
+      $align: center);
 
     &_error {
       color: var(--color-white);
@@ -72,12 +71,10 @@
   }
 
   &__text {
-    @include m.font(
-      $color: var(--color-black),
+    @include m.font($color: var(--color-black),
       $family: var(--font-text),
       $size: 16px,
-      $align: center
-    );
+      $align: center);
 
     &_error {
       color: var(--color-white);
@@ -89,6 +86,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
